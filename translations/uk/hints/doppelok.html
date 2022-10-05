@@ -1,0 +1,98 @@
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        Я не знаю, як розпочати вирішення цієї місії
+    </div>
+    <div class="answer">
+        Ідея тут полягає в тому, що тобі потрібно зробити так, щоб пройтись по рядку з конкретним кроком. Наприклад
+        ти можеш скористатись циклом, або генератором списків.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Мені потрібна допомога, щоб продовжити місію
+    </div>
+    <div class="answer">
+        Використаємо для нашого рішення генератор списків та декілька функцій.
+        <a href='https://docs.python.org/3.10/library/functions.html#len'>len()</a>
+        (<a href='https://www.w3schools.com/python/ref_func_len.asp'>приклад</a> ),
+        <a href='https://docs.python.org/3.10/library/functions.html#func-range'>range()</a>
+        (<a href='https://www.w3schools.com/python/ref_func_range.asp'>приклад</a> ),
+        <a href='https://docs.python.org/3.10/tutorial/datastructures.html#list-comprehensions'>list comprehensions</a>.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Потрібна допомога!
+    </div>
+    <div class="answer">
+        Запишемо звичайний генератор списків, який ми будемо модифікувати. В цьому генераторі ми будемо
+        просто ітеруватись по заданому списку.
+
+        <pre class="brush: python">
+a = [i for i in items]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Я вже не знаю що робити. Мені потрібна маленька підказка.
+    </div>
+    <div class="answer">
+        Ітеруватись по списку з конкретним кроком нам допоможуть дві функції range() len(). Функція range()
+        може приймати як аргументи (початок відрахунку, кінець, крок). Початок ми обираємо 0, кінець буде
+        довжина списку (тобто використаємо функцію len()), а крок це буде наш size.
+        Також зміниться початок генератору, він тепер буде додавати елементи по індексу в списку.
+        <pre class="brush: python">
+a = [items[i] for i in range(0, len(items), size)]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Нічого не працює. SOS
+    </div>
+    <div class="answer">
+        Нам потрібно додати фінальний апгрейд нашого генератору списку. Зараз ми додаємо до списку тільки перший,
+        четвертий та сьомий елементи (пам'ятай, що нумерація починається з 0, а не з 1). Тому ми допишемо код, що
+        будемо додавати елементи з - по.
+        <pre class="brush: python">
+a = [items[i:i+size] for i in range(0, len(items), size)]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Не хочу здаватись, допоможи!
+    </div>
+    <div class="answer">
+        Тобі залишилось обгорнути код у вираз функції та повернути наш генератор списку.
+        <pre class="brush: python">
+from typing import Iterable
+
+
+def chunking_by(items: list, size: int) -> Iterable:
+    return [items[i:i+size] for i in range(0, len(items), size)]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Я хочу бути кращим з кращих ПРОГРАМІСТІВ!!! ПОКАЖИ МЕНІ БІЛЬШЕ РІШЕНЬ!!1!!!11!
+    </div>
+    <div class="answer">
+        Добре, добре! Оце настрій!=)
+        Варіант рішення місії за допомогою циклу for та виразу yield. Така функція теж сама по собі вважається генератором.
+        <pre class="brush: python">
+from typing import Iterable
+
+
+def chunking_by(items: list, size: int) -> Iterable:
+    for i in range(0, len(items), n):
+        yield items[i:i + n]
+        </pre>
+    </div>
+</div>
+
+
+</body>
