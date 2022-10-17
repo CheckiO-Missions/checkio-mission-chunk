@@ -1,0 +1,45 @@
+<!-- Describe task in general -->
+
+<p>
+    <i>У тебе багато роботи, тому ти можеш розділити її на менші частини. Таким чином ти знатимеш, яку частину будеш робити в понеділок, яку у вівторок і так далі. </i>
+</p>
+
+<p>
+    Розділи {% if is_js %}масив{% else %}список{% endif %} на менші {% if is_js %}масиви{% else %}списки{% endif %}
+    однакового розміру (фрагменти). Останній фрагмент може бути меншим за стандартний розмір фрагмента. Якщо {% if is_js %}масив{% else %}список{% endif %} порожній,
+    то у тебе узагалі не повинно бути фрагментів.
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 300px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Вхідні дані: </strong> Два аргументи. {% if is_js %}Масив{% else %}Список{% endif %} і розмір блоку.
+</p>
+
+<p>
+    <strong>Вихідні дані: </strong> {% if is_js %}Масив{% else %}Ітераційний об'єкт{% endif %} з фрагментами {% if is_js %}масиву{% else %}ітераційних об'єктів{% endif %}.
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Приклад:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Передумова:</strong>
+    <i>розмір фрагментів > 0</i>
+</p>

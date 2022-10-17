@@ -1,0 +1,25 @@
+{% comment %}New initial code template{% endcomment %}
+{% block env %}from typing import Iterable{% endblock env %}
+
+{% block start %}
+def chunking_by(items: list, size: int) -> Iterable:
+    # your code here
+    return items
+
+
+{% endblock start %}
+
+{% block example %}
+print('Example:')
+print(list(chunking_by([5, 4, 7, 3, 4, 5, 4], 3)))
+{% endblock %}
+
+{% block tests %}
+{% for t in tests %}
+assert {% block call %}list(chunking_by({{t.input|p_args}}))
+{% endblock %} == {% block result %}{{t.answer|p}}{% endblock %}{% endfor %}
+{% endblock %}
+
+{% block final %}
+print("The mission is done! Click 'Check Solution' to earn rewards!")
+{% endblock final %}
