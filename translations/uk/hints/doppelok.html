@@ -88,8 +88,8 @@ from typing import Iterable
 
 
 def chunking_by(items: list, size: int) -> Iterable:
-    for i in range(0, len(items), n):
-        yield items[i:i + n]
+    for i in range(0, len(items), size):
+        yield items[i:i + size]
         </pre>
     </div>
 </div>

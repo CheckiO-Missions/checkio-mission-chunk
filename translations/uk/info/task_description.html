@@ -5,8 +5,8 @@
 </p>
 
 <p>
-    Розділи {% if interpreter.slug == "js-node" %}масив{% else %}список{% endif %} на менші {% if interpreter.slug == "js-node" %}масиви{% else %}списки{% endif %}
-    однакового розміру (фрагменти). Останній фрагмент може бути меншим за стандартний розмір фрагмента. Якщо {% if interpreter.slug == "js-node" %}масив{% else %}список{% endif %} порожній,
+    Розділи {% if is_js %}масив{% else %}список{% endif %} на менші {% if is_js %}масиви{% else %}списки{% endif %}
+    однакового розміру (фрагменти). Останній фрагмент може бути меншим за стандартний розмір фрагмента. Якщо {% if is_js %}масив{% else %}список{% endif %} порожній,
     то у тебе узагалі не повинно бути фрагментів.
 </p>
 
@@ -16,11 +16,11 @@
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Вхідні дані: </strong> Два аргументи. {% if interpreter.slug == "js-node" %}Масив{% else %}Список{% endif %} і розмір блоку.
+    <strong>Вхідні дані: </strong> Два аргументи. {% if is_js %}Масив{% else %}Список{% endif %} і розмір блоку.
 </p>
 
 <p>
-    <strong>Вихідні дані: </strong> {% if interpreter.slug == "js-node" %}Масив{% else %}Ітераційний об'єкт{% endif %} з фрагментами {% if interpreter.slug == "js-node" %}масиву{% else %}ітераційних об'єктів{% endif %}.
+    <strong>Вихідні дані: </strong> {% if is_js %}Масив{% else %}Ітераційний об'єкт{% endif %} з фрагментами {% if is_js %}масиву{% else %}ітераційних об'єктів{% endif %}.
 </p>
 
 
