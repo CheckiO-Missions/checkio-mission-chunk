@@ -1,32 +1,38 @@
 <body data-author="Doppelok">
 <div class="question-answer">
     <div class="question">
-        I don't know how to start solving this mission
+        <p>
+            I don't know how to start solving this mission.
+        </p>
     </div>
     <div class="answer">
-        The idea here is that you need to make sure that you walk the row with a specific step. For example, you can use a loop or list comprehensions.
+        <p>
+            The idea here is that you need to make sure that you walk the row with a specific step. For example, you can use a loop or list comprehensions.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        I need help to continue the mission
+        <p>
+            I need help to continue the mission.
+        </p>
     </div>
     <div class="answer">
-        We will use a list generator and several functions for our solution.
-        <a href='https://docs.python.org/3.10/library/functions.html#len'>len()</a>
-        (<a href='https://www.w3schools.com/python/ref_func_len.asp'>example</a> ),
-        <a href='https://docs.python.org/3.10/library/functions.html#func-range'>range()</a>
-        (<a href='https://www.w3schools.com/python/ref_func_range.asp'>example</a> ),
-        <a href='https://docs.python.org/3.10/tutorial/datastructures.html#list-comprehensions'>list comprehensions</a>.
+        <p>
+            We will use a list generator and several functions for our solution. <a target="_blank" href='https://docs.python.org/3.10/library/functions.html#len'>len()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_func_len.asp'>example</a>), <a target="_blank" href='https://docs.python.org/3.10/library/functions.html#func-range'>range()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_func_range.asp'>example</a>), <a target="_blank" href='https://docs.python.org/3.10/tutorial/datastructures.html#list-comprehensions'>list comprehensions</a>.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Need help!
+        <p>
+            Need help!
+        </p>
     </div>
     <div class="answer">
-        Let's write a regular list comprehension, which we will modify. In this list comprehension, we will simply iterate over the given list.
-
+        <p>
+            Let's write a regular list comprehension, which we will modify. In this list comprehension, we will simply iterate over the given list.
+        </p>
         <pre class="brush: python">
 a = [i for i in items]
         </pre>
@@ -34,13 +40,14 @@ a = [i for i in items]
 </div>
 <div class="question-answer">
     <div class="question">
-        I don't know what to do anymore. I need a little hint.
+        <p>
+            I don't know what to do anymore. I need a little hint.
+        </p>
     </div>
     <div class="answer">
-        Two functions range() and len() will help us to iterate through the list with a specific step. The range()
-        function can accept as arguments (counting start, end, step). We choose 0 as the beginning, the end will
-        be the length of the list (that is, we will use the len() function), and the step will be our size.
-        The beginning of the list comprehension will also change, it will now add elements by index in the list.
+        <p>
+            Two functions <b class="code">range()</b> and <b class="code">len()</b> will help us to iterate through the list with a specific step. The <b class="code">range()</b> function can accept as arguments (counting start, end, step). We choose 0 as the beginning, the end will be the length of the list (that is, we will use the <b class="code">len()</b> function), and the step will be our <b class="code"> size</b>. The beginning of the list comprehension will also change, it will now add elements by index in the list.
+        </p>
         <pre class="brush: python">
 a = [items[i] for i in range(0, len(items), size)]
         </pre>
@@ -48,12 +55,14 @@ a = [items[i] for i in range(0, len(items), size)]
 </div>
 <div class="question-answer">
     <div class="question">
-        Nothing works. SOS
+        <p>
+            Nothing works. SOS
+        </p>
     </div>
     <div class="answer">
-        We need to add the final upgrade to our list comprehension. Now we add only the first, fourth and seventh
-        elements to the list (remember that the numbering starts with 0, not 1). Therefore, we will add the
-        code that will add elements from - to.
+        <p>
+            We need to add the final upgrade to our list comprehension. Now we add only the first, fourth and seventh elements to the list (remember that the numbering starts with 0, not 1). Therefore, we will add the code that will add elements from - to.
+        </p>
         <pre class="brush: python">
 a = [items[i:i+size] for i in range(0, len(items), size)]
         </pre>
@@ -61,36 +70,43 @@ a = [items[i:i+size] for i in range(0, len(items), size)]
 </div>
 <div class="question-answer">
     <div class="question">
-        I don't want to give up, help!
+        <p>
+            I don't want to give up, help!
+        </p>
     </div>
     <div class="answer">
-        All you have to do is wrap the code in a function expression and return our list comprehension.
+        <p>
+            All you have to do is wrap the code in a function expression and return our list comprehension.
+        </p>
         <pre class="brush: python">
-from typing import Iterable
+from collections.abc import Iterable
 
 
-def chunking_by(items: list, size: int) -> Iterable:
+def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
+
     return [items[i:i+size] for i in range(0, len(items), size)]
         </pre>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        I want to be the best of the best PROGRAMMERS!!! SHOW ME MORE SOLUTIONS!!1!!!11!
+        <p>
+            I want to be the best of the best PROGRAMMERS!!! SHOW ME MORE SOLUTIONS!!1!!!11!
+        </p>
     </div>
     <div class="answer">
-        Okay, okay! That's the spirit!=)
-        Option to solve the mission using a for loop and a yield expression. Such a function is also considered a generator by itself.
+        <p>
+            Okay, okay! That's the spirit!=) Option to solve the mission using a <b class="code">for</b> loop and <b class="code">yield</b> expression. Such a function is also considered a generator by itself.
+        </p>
         <pre class="brush: python">
 from typing import Iterable
 
 
-def chunking_by(items: list, size: int) -> Iterable:
+def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
+
     for i in range(0, len(items), size):
         yield items[i:i + size]
         </pre>
     </div>
 </div>
-
-
 </body>
