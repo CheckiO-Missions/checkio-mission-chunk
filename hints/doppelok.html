@@ -78,6 +78,7 @@ a = [items[i:i+size] for i in range(0, len(items), size)]
         <p>
             All you have to do is wrap the code in a function expression and return our list comprehension.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterable
 
@@ -86,6 +87,7 @@ def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
 
     return [items[i:i+size] for i in range(0, len(items), size)]
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -98,8 +100,9 @@ def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
         <p>
             Okay, okay! That's the spirit!=) Option to solve the mission using a <b class="code">for</b> loop and <b class="code">yield</b> expression. Such a function is also considered a generator by itself.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
-from typing import Iterable
+from collections.abc import Iterable
 
 
 def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
@@ -107,6 +110,7 @@ def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
     for i in range(0, len(items), size):
         yield items[i:i + size]
         </pre>
+        </div>
     </div>
 </div>
 </body>
