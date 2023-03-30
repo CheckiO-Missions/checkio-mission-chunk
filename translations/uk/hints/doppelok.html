@@ -79,6 +79,7 @@ a = [items[i:i+size] for i in range(0, len(items), size)]
         <p>
             Тобі залишилось обгорнути код у вираз функції та повернути наш генератор списку.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterable
 
@@ -87,6 +88,7 @@ def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
 
     return [items[i:i+size] for i in range(0, len(items), size)]
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -99,6 +101,7 @@ def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
         <p>
             Добре, добре! Оце настрій!=) Варіант рішення місії за допомогою циклу <b class="code">for</b> та виразу <b class="code">yield</b>. Така функція теж сама по собі вважається генератором.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterable
 
@@ -108,6 +111,7 @@ def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
     for i in range(0, len(items), size):
         yield items[i:i + size]
         </pre>
+        </div>
     </div>
 </div>
 </body>
