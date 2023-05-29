@@ -1,0 +1,116 @@
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je ne sais pas comment commencer à résoudre cette mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            L'idée ici est que vous devez vous assurer que vous parcourez la ligne avec une étape spécifique. Par exemple, vous pouvez utiliser une boucle ou des listes de compréhension.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            J'ai besoin d'aide pour poursuivre la mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Nous utiliserons un générateur de liste et plusieurs fonctions pour notre solution. <a target="_blank" href='https://docs.python.org/3.10/library/functions.html#len'>len()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_func_len.asp'>example</a>), <a target="_blank" href='https://docs.python.org/3.10/library/functions.html#func-range'>range()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_func_range.asp'>example</a>), <a target="_blank" href='https://docs.python.org/3.10/tutorial/datastructures.html#list-comprehensions'>list comprehensions</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Besoin d'aide!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Ecrivons une compréhension de liste ordinaire, que nous allons modifier. Dans cette compréhension de liste, nous allons simplement itérer sur la liste donnée.
+        </p>
+        <pre class="brush: python">
+a = [i for i in items]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je ne sais plus quoi faire. J'ai besoin d'un petit conseil.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Deux fonctions <b class="code">range()</b> et <b class="code">len()</b> nous aideront à parcourir la liste avec un pas spécifique. La fonction <b class="code">range()</b> peut accepter comme arguments (comptage du début, de la fin, du pas). Nous choisissons 0 comme début, la fin sera la longueur de la liste (c'est-à-dire que nous utiliserons la fonction <b class="code">len()</b> ), et le pas sera notre <b class="code"> size</b>. Le début de la compréhension de la liste changera également, il ajoutera maintenant des éléments par index dans la liste.
+        </p>
+        <pre class="brush: python">
+a = [items[i] for i in range(0, len(items), size)]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Rien ne fonctionne. SOS
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Nous devons ajouter la dernière amélioration à la compréhension de notre liste. À présent, nous n'ajoutons que les premier, quatrième et septième éléments à la liste (n'oubliez pas que la numérotation commence par 0, et non par 1). Par conséquent, nous allons ajouter le code qui ajoutera les éléments de - à.
+        </p>
+        <pre class="brush: python">
+a = [items[i:i+size] for i in range(0, len(items), size)]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je ne veux pas abandonner, aidez-moi!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Tout ce que vous avez à faire est d'envelopper le code dans une expression de fonction et de renvoyer notre compréhension de la liste.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterable
+
+
+def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
+
+    return [items[i:i+size] for i in range(0, len(items), size)]
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je veux être le meilleur des meilleurs PROGRAMMEURS!!! MONTREZ-MOI D'AUTRES SOLUTIONS!!1!!!11!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            D'accord, d'accord! C'est l'esprit!=) Option pour résoudre la mission en utilisant une boucle <b class="code">for</b> et une expression <b class="code">yield</b>. Une telle fonction est également considérée comme un générateur en soi.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterable
+
+
+def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
+
+    for i in range(0, len(items), size):
+        yield items[i:i + size]
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
