@@ -1,0 +1,43 @@
+<!-- Describe task in general -->
+
+<p>
+    <i>Vous avez beaucoup de travail à faire, vous pouvez donc le diviser en plusieurs parties. De cette façon, vous saurez quel morceau vous ferez le lundi, lequel sera pour le mardi et ainsi de suite. </i>
+</p>
+
+<p>
+    Divisez {% if is_js %}un tableau <span>(array)</span>{% else %} une liste <span>(list)</span>{% endif %} en plus petits tableaux {% if is_js %} <span>(arrays)</span> {% else %} listes <span>(lists)</span>{% endif %} de la même taille (morceaux). Le dernier morceau peut être plus petit que la taille de morceau par défaut. Si le tableau {% if is_js %} <span>(array)</span> {% else %} liste <span>(list)</span>{% endif %} est vide, vous ne devriez pas avoir de morceaux du tout.
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 300px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Entrée:</strong> Deux arguments. {% if is_js %}Un tableau <span>(array)</span>{% else %} Une liste <span>(list)</span>{% endif %} et la taille des morceaux.
+</p>
+
+<p>
+   <strong>Résultat:</strong> {% if is_js %}Tableau <span>(Array)</span>{% else %} Liste <span>(List)</span> ou autre Iterable (tuple, generator, iterator) {% endif %} avec des tableaux {% if is_js %}chunked <span>(arrays)</span>{% else %} listes <span>(lists)</span>{% endif %}.
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Exemples:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Condition préalable:</strong>
+    <i>chunk-size &gt; 0</i>
+</p>
