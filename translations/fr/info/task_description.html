@@ -5,7 +5,7 @@
 </p>
 
 <p>
-    Divisez {% if is_js %}un tableau <span>(array)</span>{% else %} une liste <span>(list)</span>{% endif %} en plus petits tableaux {% if is_js %} <span>(arrays)</span> {% else %} listes <span>(lists)</span>{% endif %} de la même taille (morceaux). Le dernier morceau peut être plus petit que la taille de morceau par défaut. Si le tableau {% if is_js %} <span>(array)</span> {% else %} liste <span>(list)</span>{% endif %} est vide, vous ne devriez pas avoir de morceaux du tout.
+    Divisez {% if is_js %}un tableau <span>(array)</span>{% else %}une liste <span>(list)</span>{% endif %} en plus petits {% if is_js %}tableaux <span>(arrays)</span>{% else %}listes <span>(lists)</span>{% endif %} de la même taille (morceaux). Le dernier morceau peut être plus petit que la taille de morceau par défaut. Si le {% if is_js %}tableau <span>(array)</span>{% else %}liste <span>(list)</span>{% endif %} est vide, vous ne devriez pas avoir de morceaux du tout.
 </p>
 
 <p style="text-align: center;">
@@ -14,11 +14,11 @@
 
 <!-- Explain input and output values -->
 <p>
-   <strong>Entrée:</strong> Deux arguments. {% if is_js %}Un tableau <span>(array)</span>{% else %} Une liste <span>(list)</span>{% endif %} et la taille des morceaux.
+   <strong>Entrée:</strong> Deux arguments. {% if is_js %}Un tableau <span>(array)</span>{% else %}Une liste <span>(list)</span>{% endif %} et la taille des morceaux.
 </p>
 
 <p>
-   <strong>Résultat:</strong> {% if is_js %}Tableau <span>(Array)</span>{% else %} Liste <span>(List)</span> ou autre Iterable (tuple, generator, iterator) {% endif %} avec des tableaux {% if is_js %}chunked <span>(arrays)</span>{% else %} listes <span>(lists)</span>{% endif %}.
+   <strong>Résultat:</strong> {% if is_js %}Tableau <span>(array)</span>{% else %}Liste <span>(list)</span> ou autre Iterable (tuple, generator, iterator) {% endif %} avec des {% if is_js %}tableaux <span>(arrays)</span>{% else %}listes <span>(lists)</span>{% endif %}.
 </p>
 
 
