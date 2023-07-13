@@ -1,0 +1,116 @@
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不知道如何开始解决这项任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            这里的意思是，你需要确保你用一个特定的步骤走一行。例如，您可以使用循环或列表理解。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我需要帮助才能继续执行任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            我们的解决方案将使用列表生成器和几个函数。 <a target="_blank" href='https://docs.python.org/3.10/library/functions.html#len'>len()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_func_len.asp'>example</a>),<a target="_blank" href='https://docs.python.org/3.10/library/functions.html#func-range'>range()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_func_range.asp'>example</a>),<a target="_blank" href='https://docs.python.org/3.10/tutorial/datastructures.html#list-comprehensions'>list comprehensions</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            需要帮助！
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            让我们编写一个常规的列表理解，我们将对其进行修改。在这个列表理解中，我们将简单地遍历给定的列表。
+        </p>
+        <pre class="brush: python">
+a = [i for i in items]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不知道该怎么做了。我需要一点提示。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            两个函数<b class="code">range()</b> 和<b class="code">len()</b> 将帮助我们以特定的步长遍历列表。<b class="code">range()</b> 函数可以接受参数（开始、结束、步长）。我们选择 0 作为开始，结束将是列表的长度（即我们将使用<b class="code">len()</b> 函数），步长将是我们的<b class="code"> size</b> 。列表理解的开始也将发生变化，现在它将按索引在列表中添加元素。
+        </p>
+        <pre class="brush: python">
+a = [items[i] for i in range(0, len(items), size)]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            没有任何效果。SOS
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            我们需要将最后的升级添加到我们的列表理解中。现在，我们只向列表中添加第一、第四和第七个元素（请记住，编号是从0开始的，而不是1）。因此，我们将添加从 - 到元素的代码。
+        </p>
+        <pre class="brush: python">
+a = [items[i:i+size] for i in range(0, len(items), size)]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不想放弃，帮帮我！
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            您所要做的就是将代码封装在一个函数表达式中，并返回我们的列表理解。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterable
+
+
+def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
+
+    return [items[i:i+size] for i in range(0, len(items), size)]
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我想成为最好的程序员中的最好的程序员!!!告诉我更多的解决方案!!!1!!!11！
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            好的，好的！这就是精神！=)使用<b class="code">for</b> 循环和<b class="code">yield</b> 表达式解决任务的选项。这样的函数本身也被认为是一个生成器。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterable
+
+
+def chunking_by(items: list[int], size: int) -> Iterable[list[int]]:
+
+    for i in range(0, len(items), size):
+        yield items[i:i + size]
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
